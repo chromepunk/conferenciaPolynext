@@ -1,0 +1,158 @@
+﻿GRANT ALL ON conferencia.* TO 'joan'@'localhost' IDENTIFIED BY 'joan';
+
+<?php
+$pdo= new PDO('mysql:hostlocalhost;port=8809;dbname=Conferencia','joan','joan');
+$stmt= $pdo -> query("SELECT * FROM usuarios");
+
+echo '<table border="1">',"\n";
+while($row = $stmt -> fetch(PDO::FETCH_ASSOC))
+{
+echo("<tr><td>");
+echo($row['nombre']);
+echo("</td><td>");
+echo($row['apellido1']);
+echo("</td><td>");
+echo($row['username']);
+echo("</td><td>");
+echo($row['passw']);
+echo("</td></tr>");
+}
+echo "</table>\n;"
+?>
+
+
+create database Conferencia default character set utf8
+
+
+create table organizacion (
+	org_id integer not null AUTO_INCREMENT,
+	nombre varchar(64),
+	primary key (org_id)
+);
+
+
+
+create table usuarios (
+	usuario_id integer not null AUTO_INCREMENT,
+	nombre varchar(64),
+	apellido1 varchar(64),
+	org_id int,
+	email varchar(64),
+	primary key (usuario_id),
+	foreign key (org_id) references organizacion (org_id)
+);
+
+alter table usuarios
+add username varchar(64) not null unique,
+add passw varchar(64) not null;
+
+
+create table participantes (
+	part_id integer not null AUTO_INCREMENT,
+	usuario_id int,
+	primary key (part_id),
+	foreign key (usuario_id) references usuarios (usuario_id)
+);
+
+create table organizador (
+	organ_id integer not null AUTO_INCREMENT,
+	usuario_id int,
+	primary key (organ_id),
+	foreign key (usuario_id) references usuarios (usuario_id)
+
+);
+
+create table tematica (
+	tema_id integer not null AUTO_INCREMENT,
+	tema varchar(64),
+    	PRIMARY KEY (tema_id)
+);
+
+
+create table comunicacion (
+	com_id integer not null AUTO_INCREMENT,
+	comunicacion varchar(64),
+	abstract varchar(1024),
+	tipo varchar(64),
+	part_id int,
+	organ_id int,
+	tema_id int,
+	PRIMARY KEY (com_id),
+	foreign key (part_id) references participantes (part_id),
+	foreign key (organ_id) references organizador (organ_id),
+	foreign key (tema_id) references tematica (tema_id)
+);
+
+
+
+insert into organizacion (nombre) values ("Universitat de Valencia");
+insert into organizacion (nombre) values ("Ilerna Online");
+insert into organizacion (nombre) values ("Smithsonian");
+insert into organizacion (nombre) values ("UNED");
+insert into organizacion (nombre) values ("Hogwarts");
+insert into organizacion (nombre) values ("La la land");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("piquero", "joan", 2, "big@hotmail.com", "potasio", "johnny");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("pickman", "ronnie", 4, "big@hotmail.com", "potasio", "ronnie");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("pickman", "Pau", 4, "big@hotmail.com", "potasio", "pau");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Scholtz", "Fritz", 5, "big@hotmail.com", "potasio", "Fritz");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Dubois", "Jacques", 1, "big@hotmail.com", "potasio", "jacques");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Alystair", "Blacky", 4, "big@hotmail.com", "potasio", "blacky");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Battlehammer", "joan", 2, "big@hotmail.com", "potasio", "johnny1");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Baggins", "ronnie", 4, "big@hotmail.com", "potasio", "ronnie1");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Mereo", "Pau", 4, "big@hotmail.com", "potasio", "pau1");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Ishikawa", "Ringo", 2, "big@hotmail.com", "potasio", "ringo");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Yen", "Yu", 3, "big@hotmail.com", "potasio", "yuyen");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Yeol", "Palmera", 4, "big@hotmail.com", "potasio", "palmera");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("British", "lord", 5, "big@hotmail.com", "potasio", "lord");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Garriott", "Richard", "big@hotmail.com", 1, "potasio", "richard");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Von N.", "Jonas", 6, "big@hotmail.com", "potasio", "jonas");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Farias", "Isabel", 2, "big@hotmail.com", "potasio", "isabel");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Telea", "Roland", 4, "big@hotmail.com", "potasio", "roland");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Domínguez", "Tomas", 1, "big@hotmail.com", "potasio", "tomas");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Mass", "jo", 6, "potasiobig@hotmail.com", "potasio", "jomass");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Pelargir", "Dimbral", 5, "big@hotmail.com", "potasio", "dimbral");
+
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Sabattini", "Piero", 3, "big@hotmail.com", "potasio", "piero");
+
+insert into participantes (usuario_id) values (1);
+insert into participantes (usuario_id) values (2);
+insert into participantes (usuario_id) values (3);
+insert into participantes (usuario_id) values (4);
+insert into participantes (usuario_id) values (5);
+insert into participantes (usuario_id) values (6);
+insert into participantes (usuario_id) values (7);
+insert into participantes (usuario_id) values (8);
+insert into participantes (usuario_id) values (9);
+insert into participantes (usuario_id) values (10);
+insert into participantes (usuario_id) values (11);
+insert into participantes (usuario_id) values (12);
+insert into participantes (usuario_id) values (13);
+insert into participantes (usuario_id) values (14);
+insert into participantes (usuario_id) values (15);
+insert into participantes (usuario_id) values (16);
+
+insert into organizador (usuario_id) values (17);
+insert into organizador (usuario_id) values (18);
+insert into organizador (usuario_id) values (19);
+insert into organizador (usuario_id) values (20);
+insert into organizador (usuario_id) values (21);
+
+
+
+
+insert into tematica(tema) values("síntesis polimérica");
+
+insert into tematica(tema) values("análisis de polimeros");
+
+insert into tematica(tema) values("materiales composites");
+
+insert into tematica(tema) values("educación y formación");
+
+insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("polimeros de Si-Li","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.","oral", 1,2,4);
