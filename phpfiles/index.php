@@ -7,6 +7,8 @@
   <p>This example use media queries to stack the topnav vertically when the screen size is 600px or less.</p>
   <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
   <h4>Resize the browser window to see the effect.</h4>
+
+<?php print_r($_SESSION); echo "hola"; ?>
 </div>
 <?php 
 	include "pie.php";

@@ -1,4 +1,7 @@
 
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,5 +19,12 @@
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="javascript:alert('hola')">Conferencias</a></li>
   <li><a href="#contact">Posters</a></li>
-  <li class="right"><a href="#about">Login</a></li>
+<?php
+	if(isset($_GET["username"])){
+	echo ' <li class="right"><a href="">bienvenido/a, '.$_GET["username"].'</a></li>';
+}else{
+
+	echo ' <li class="right"><a href="#about">Login</a></li>';
+}
+?>
 </ul>

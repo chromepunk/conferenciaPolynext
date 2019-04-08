@@ -1,5 +1,6 @@
 <?php
 require_once "pdo.php";
+session_destroy();
 session_start();
 
 if(isset($_POST['username']) && isset($_POST['passw'])){
@@ -15,14 +16,13 @@ if(isset($_POST['username']) && isset($_POST['passw'])){
 		return;
 	}
 	$_SESSION['success'] = 'bienvenido '.$_POST['username'];
+	$_SESSION['username'] = $_POST['username'];
+	header ('Location: index.php?username='.$_POST['username']);
 }
 
 ?>
 
-
-<html><head></head>
-<body>
-
+<?php include "cabecera.php"; ?>
 <?php
 	if(isset($_SESSION['error'])){
 		echo '<p style="color:red">'.$_SESSION['error']."</p>\n";
@@ -43,5 +43,4 @@ if(isset($_POST['username']) && isset($_POST['passw'])){
 	</p>
 	<input type="submit" placeholder="enviar">
 </form>
-</body>
-</html>
+<?php include "pie.php"; ?>

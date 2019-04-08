@@ -18,8 +18,9 @@ if(isset($_POST['username'])){
 ?>
 
 
-<html><head></head>
-<body>
+<?php
+	include "cabecera.php";
+?>
 
 <?php
 	if(isset($_SESSION['error'])){
