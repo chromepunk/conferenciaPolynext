@@ -21,10 +21,10 @@
   <li><a href="#contact">Posters</a></li>
 <?php
 	if(isset($_GET["username"])){
-	echo ' <li class="right"><a href="">bienvenido/a, '.$_GET["username"].'</a></li>';
+	echo ' <li class="right"><a href="login.php">bienvenido/a, '.$_GET["username"].'</a></li>';
 }else{
 
-	echo ' <li class="right"><a href="#about">Login</a></li>';
+	echo ' <li class="right"><a href="login.php">Login</a></li>';
 }
 ?>
 </ul>

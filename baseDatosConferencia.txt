@@ -109,7 +109,7 @@ insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("
 
 insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Yeol", "Palmera", 4, "big@hotmail.com", "potasio", "palmera");
 insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("British", "lord", 5, "big@hotmail.com", "potasio", "lord");
-insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Garriott", "Richard", "big@hotmail.com", 1, "potasio", "richard");
+insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Garriott", "Richard",1, "big@hotmail.com",  "potasio", "richard");
 
 insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Von N.", "Jonas", 6, "big@hotmail.com", "potasio", "jonas");
 insert into usuarios(apellido1, nombre, org_id, email, passw, username) values("Farias", "Isabel", 2, "big@hotmail.com", "potasio", "isabel");

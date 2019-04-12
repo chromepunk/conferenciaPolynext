@@ -1,6 +1,25 @@
-//dise–o de la pagina web (Wireframe)
+//diseño de la pagina web (Wireframe)
+
+Se ha empleado el metodo include de php para poder separar las distintas secciones de la pagina web.
+
+Responsive mobile first
+
+//gestion errores
+En la base de datos 
+
+//Acceso a base de datos
+
+Datos en utf8
+
+Externalizacion de las consultas, updates, conexiones etc.
+
+//Control de versiones
+
+//Nuevo usuario
 
 
+
+//subir una comunicacion 
 
 
 
