@@ -8,7 +8,10 @@
   <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
   <h4>Resize the browser window to see the effect.</h4>
 
-<?php print_r($_SESSION); echo "hola"; ?>
+<?php  
+		echo '<p style="color:green">'.$_SESSION['exito']."</p>\n";
+?>
+
 </div>
 <?php 
 	include "pie.php";

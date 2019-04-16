@@ -17,7 +17,7 @@ Externalizacion de las consultas, updates, conexiones etc.
 
 //Nuevo usuario
 
-
+//log out
 
 //subir una comunicacion 
 

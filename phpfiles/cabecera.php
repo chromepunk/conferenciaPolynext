@@ -16,15 +16,15 @@
 
 
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
+  <li><a class="active" href="index.php">Home</a></li>
   <li><a href="javascript:alert('hola')">Conferencias</a></li>
   <li><a href="#contact">Posters</a></li>
 <?php
 	if(isset($_GET["username"])){
-	echo ' <li class="right"><a href="login.php">bienvenido/a, '.$_GET["username"].'</a></li>';
+	echo ' <li class="right"><a href="login2.php">bienvenido/a, '.$_GET["username"].'</a></li>';
 }else{
 
-	echo ' <li class="right"><a href="login.php">Login</a></li>';
+	echo ' <li class="right"><a href="login2.php">Login</a></li>';
 }
 ?>
 </ul>
