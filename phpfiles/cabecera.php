@@ -1,6 +1,10 @@
 
 <?php
 	session_start();
+	if($_GET['opcion']==1){
+		session_unset();
+		session_destroy();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,10 +25,11 @@
   <li><a href="#contact">Posters</a></li>
 <?php
 	if(isset($_GET["username"])){
-	echo ' <li class="right"><a href="login2.php">bienvenido/a, '.$_GET["username"].'</a></li>';
+	echo ' <li class="right"><a href="index.php?opcion=1">,desconectar</a></li>';
+	echo ' <li class="right"><a href="login.php">bienvenido/a, '.$_GET["username"].'</a></li>';
 }else{
 
-	echo ' <li class="right"><a href="login2.php">Login</a></li>';
+	echo ' <li class="right"><a href="login.php">Login</a></li>';
 }
 ?>
 </ul>

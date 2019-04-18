@@ -18,6 +18,10 @@ Externalizacion de las consultas, updates, conexiones etc.
 //Nuevo usuario
 
 //log out
+Se realizará en dos pasos primero se borran todas las variables de la sesión:
+session_unset();
+Después se destruye la sesión:
+session_destroy();
 
 //subir una comunicacion 
 
