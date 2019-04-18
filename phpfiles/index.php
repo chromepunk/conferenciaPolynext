@@ -9,6 +9,8 @@
   <h4>Resize the browser window to see the effect.</h4>
 
 <?php  
+		if($_GET['opcion']==2){
+			echo '<p style="color:green"><h3>Usuario Registrado!</h3></p>';}
 		echo '<p style="color:green">'.$_SESSION['exito']."</p>\n";
 ?>
 

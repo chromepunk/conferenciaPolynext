@@ -16,7 +16,7 @@ Externalizacion de las consultas, updates, conexiones etc.
 //Control de versiones
 
 //Nuevo usuario
-
+Se ha añadido la opción de crear un nuevo usuario mediante el empleo de una función buscar que recibe como parámetros la conexión a la base de datos y el nombre de usuario, si este nombre de usuario ya se encuentra registrado devuelve el valor false con lo que se inhibe la creación de un nuevo usuario. Si el nombre de usuario no existe se invoca a una función que insertará los datos del nuevo usuario. Estos datos se obtienen mediante un formulario en el que se emplearon inputs adecuados a cada tipo de información (texto, email, password etc.).
 //log out
 Se realizará en dos pasos primero se borran todas las variables de la sesión:
 session_unset();

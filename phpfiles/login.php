@@ -46,6 +46,7 @@
 	<input type="password" name="passw" value="potasio" required>
 	</p>
 	<input type="submit" placeholder="enviar">
+	<a href="newuser.php">Nuevo usuario</a>
 </form>
 </body>
 </html>
