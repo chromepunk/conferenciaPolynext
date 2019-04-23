@@ -30,8 +30,9 @@
 
 ?>
 <html>
+<script src="../javascript/funciones.jss"></script>
 <body>
-<form method ="post" action="newuser.php">
+<form name="nuevousuario" onsubmit="return validacion()" method ="post" action="newuser.php">
 <p>Nombre
 <input name="nombre" type="text" /><br>
 </p>
@@ -53,10 +54,10 @@
 <input name="email" type="email" /><br>
 </p>
 <p>Username
-<input name="username" type="text" required/><br>
+<input name="username" type="text" /><br>
 </p>
 <p>Password
-<input name="passwd" type="password" required/><br>
+<input name="passwd" type="password" /><br>
 </p>
 <input type="submit" value="enviar"/>
 <input type="reset" value="reset"/>

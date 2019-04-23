@@ -15,9 +15,25 @@ Externalizacion de las consultas, updates, conexiones etc.
 
 //Control de versiones
 
+Se ha creado un repositorio local mediante el empleo de GIT ya que a mi juicio es muy potente y fácil de usar. Además existe abundante documentación y tutoriales sobre su uso.
+De igual manera se creó otro repositorio remoto en la web github. Esto ha resultado especialmente conveniente ya que ha permitido trabajar desde varios ordenadores.
 //Nuevo usuario
+
 Se ha añadido la opción de crear un nuevo usuario mediante el empleo de una función buscar que recibe como parámetros la conexión a la base de datos y el nombre de usuario, si este nombre de usuario ya se encuentra registrado devuelve el valor false con lo que se inhibe la creación de un nuevo usuario. Si el nombre de usuario no existe se invoca a una función que insertará los datos del nuevo usuario. Estos datos se obtienen mediante un formulario en el que se emplearon inputs adecuados a cada tipo de información (texto, email, password etc.).
-//log out
+La validación de los datos se ha llevado a cabo mediante Javascript y expresiones regulares, en el lado del cliente. El esquema que se ha seguido es el siguiente:
+
+<script>
+	function validacion(){
+		var palabra = document.forms["formulario"]["campo"].value;
+		if (palabra == ""){
+			return false;
+		}
+</script>
+
+<form name="formulario" action="" onsubmit="return validacion" method="post">...</form>
+
+
+////////log out
 Se realizará en dos pasos primero se borran todas las variables de la sesión:
 session_unset();
 Después se destruye la sesión:
@@ -29,7 +45,7 @@ session_destroy();
 
 ////////login usuario/////////
 
-Primero empezaremos con un formulario típico, usaremos los atributos required.
+Primero empezaremos con un formulario típico, usaremos los atributos required..
 
 <form action="" method="post">
     
@@ -71,3 +87,7 @@ else {
 ?>
 
 Para logout <?php session_destroy(); ?>
+
+////bibliografia////
+
+w3schools.com
