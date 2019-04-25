@@ -11,6 +11,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/stilo1.css">
+<link rel="stylesheet" href="../css/conferencia.css">
 </head>
 <body>
 
@@ -21,7 +22,7 @@
 
 <ul>
   <li><a class="active" href="index.php">Home</a></li>
-  <li><a href="javascript:alert('hola')">Conferencias</a></li>
+  <li><a href="conferencias.php">Conferencias</a></li>
   <li><a href="#contact">Posters</a></li>
 <?php
 	if(isset($_GET["username"])){
@@ -33,3 +34,4 @@
 }
 ?>
 </ul>
+

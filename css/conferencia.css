@@ -1,0 +1,71 @@
+/*Set the table color, border, and spacing...*/
+table.cal{
+	color:#06425C;
+	border-spacing: 0;
+	border: 3px solid black;
+	-webkit-border-radius: 25px 25px 0 0;
+	border-radius: 0 0 25px 25px;
+}
+/*Alternate colors between even and odd weeks*/
+tr:nth-child(odd) {
+	background: #3394b930;
+}
+tr:nth-child(even) {
+	background: #cd79b0ab;
+}
+
+/*To curve the bottom, we need to curve the
+row and the element.  And each element needs to 
+curve a different corner.*/
+tr:last-child{
+	-webkit-border-radius: 25px 25px 0 0;
+	border-radius: 0 0 25px 25px;	
+}
+tr:last-child>td:first-child {
+	-webkit-border-radius: 0 0 0 25px;
+	border-radius: 0 0 0 25px;	
+}
+
+tr:last-child>td:last-child{
+	-webkit-border-radius: 0 0 25px 0;
+	border-radius: 0 0 25px 0;	
+}
+
+/*Format the caption
+Use border-radius for just some corners*/
+.cal caption{
+	text-transform: uppercase;
+	background-color: #666666;
+	color:#ffffff;
+	font-size: 150%;
+	-webkit-border-radius: 25px 25px 0 0;
+	border-radius: 25px 25px 0 0;
+}
+
+/*Format common heading and element attributes*/
+.cal th, .cal td{
+	margin: 2px;
+	padding-bottom: 2px;
+}
+
+/*Format the table headings*/
+th{
+	text-align: center;
+	background: #FFFFFF;
+}
+
+/*Set the size and alignment for elements*/
+.cal td{
+	width:75px;
+	height:75px;
+	vertical-align:top;
+
+}
+/*señala en el calendario los dias con alguna actividad*/
+.redletter {
+	background-color: #56d0bda1;
+}
+.contienecal{
+	margin:10%;
+}
+

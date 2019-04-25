@@ -1,8 +1,12 @@
+
 //diseño de la pagina web (Wireframe)
 
 Se ha empleado el metodo include de php para poder separar las distintas secciones de la pagina web.
 
 Responsive mobile first
+
+Pagina de conferencias, se ha añadido un calendario y una serie de actividades que se generan de manera dinamica mediante un array asociativo que contiene toda la información al respecto.  El calendario tambien se ha generado de manera dinamica empleando bucles for. Además se han señalado los dias con actividades mediante el empleo de la funcion key_array_exists par saber si en un día determinado existían una actividad.
+
 
 //gestion errores
 En la base de datos 
@@ -17,6 +21,7 @@ Externalizacion de las consultas, updates, conexiones etc.
 
 Se ha creado un repositorio local mediante el empleo de GIT ya que a mi juicio es muy potente y fácil de usar. Además existe abundante documentación y tutoriales sobre su uso.
 De igual manera se creó otro repositorio remoto en la web github. Esto ha resultado especialmente conveniente ya que ha permitido trabajar desde varios ordenadores.
+
 //Nuevo usuario
 
 Se ha añadido la opción de crear un nuevo usuario mediante el empleo de una función buscar que recibe como parámetros la conexión a la base de datos y el nombre de usuario, si este nombre de usuario ya se encuentra registrado devuelve el valor false con lo que se inhibe la creación de un nuevo usuario. Si el nombre de usuario no existe se invoca a una función que insertará los datos del nuevo usuario. Estos datos se obtienen mediante un formulario en el que se emplearon inputs adecuados a cada tipo de información (texto, email, password etc.).
@@ -40,8 +45,6 @@ Después se destruye la sesión:
 session_destroy();
 
 //subir una comunicacion 
-
-
 
 ////////login usuario/////////
 
