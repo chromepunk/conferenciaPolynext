@@ -1,4 +1,4 @@
-
+<!DOCTYPE>
 <?php
 	session_start();
 	if($_GET['opcion']==1){
@@ -12,11 +12,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="../css/stilo1.css">
 <link rel="stylesheet" href="../css/conferencia.css">
+<link rel="stylesheet" type="text/css" href="../css/slideshow.css">
 </head>
 <body>
 
 <div class="header">
 	<h1>polyNext</h1>
+	<h3>XXII Congreso para el avance y difusión en investigación y tecnología de polimeros. 22 al 29 de Julio, Valencia</h3>
 </div>
 
 

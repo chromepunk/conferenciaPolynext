@@ -1,6 +1,9 @@
 
 //diseño de la pagina web (Wireframe)
 
+En la página principal se ha añadido un slideshow (conjunto de imagenes que se van mostrando una a una mediante el empleo de botones. La implementación es muy sencilla si se usan frameworks como Bootstrap pero en este caso como se persigue aprender lo máximo posible se ha empleado solo html, css y javascript.
+Se ha comenzado con la parte de html añadiendo contenedores para las imagenes, botones, texto etc. Después se ha dado estilo en un archivo externo css donde nos aseguramos de que las imágenes no sean visible (display:none) mediante código javascript permitimos a los botones que la imágen seleccionada se vuelva visible (display:block). Un error bastante común es que si el archivo javascript se invoca demasiado pronto en el documento html es posible que los elementos a los que ataca no esten aun generados por lo que se optó por declarar el archivo externo de javascript en la zona mas baja del documento html.
+
 Se ha empleado el metodo include de php para poder separar las distintas secciones de la pagina web.
 
 Responsive mobile first
