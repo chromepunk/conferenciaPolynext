@@ -8,6 +8,7 @@ Se ha empleado el metodo include de php para poder separar las distintas seccion
 
 Responsive mobile first
 
+
 Pagina de conferencias, se ha añadido un calendario y una serie de actividades que se generan de manera dinamica mediante un array asociativo que contiene toda la información al respecto.  El calendario tambien se ha generado de manera dinamica empleando bucles for. Además se han señalado los dias con actividades mediante el empleo de la funcion key_array_exists par saber si en un día determinado existían una actividad.
 
 

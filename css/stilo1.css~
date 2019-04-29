@@ -69,7 +69,7 @@ h1 {
 .right {
 	float:right;
 }
-@media screen and (min-width:757px){
+@media screen and (min-width:707px){
 	.column{
 	display:inline-block;
 	width:30%;
