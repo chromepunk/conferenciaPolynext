@@ -28,6 +28,8 @@ padding: 8px; - Since block elements take up the full width available, they cann
 */
 li {
   float: left;
+  width:100%;
+  display:inline;
 }
 
 li a {
@@ -75,7 +77,11 @@ h1 {
 	width:30%;
 	float:left;
 	margin-left:2%;
+	}
+	li{
+		display:inline-block;
+		width:auto;
 }
-
+	
 
 }

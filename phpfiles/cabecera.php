@@ -22,7 +22,7 @@
 </div>
 
 
-<ul>
+<ul class="topnav">
   <li><a class="active" href="index.php">Home</a></li>
   <li><a href="conferencias.php">Conferencias</a></li>
   <li><a href="#contact">Posters</a></li>

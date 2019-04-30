@@ -8,6 +8,9 @@ Se ha empleado el metodo include de php para poder separar las distintas seccion
 
 Responsive mobile first
 
+Se ha añadido un comportamiento responsive simple mediante el uso de media queries bajo la premisa "mobile first" es decir diseñar las páginas pensando en dispositivos con pantallas pequeñas:
+Si la pantalla tiene una longitud menor de 757 pixeles el menu de navegación se transformará para ser mas sencillo de utilizar a la vez el texto se dispondrá en una única columna frente a las 3 para pantallas mas grandes
+
 
 Pagina de conferencias, se ha añadido un calendario y una serie de actividades que se generan de manera dinamica mediante un array asociativo que contiene toda la información al respecto.  El calendario tambien se ha generado de manera dinamica empleando bucles for. Además se han señalado los dias con actividades mediante el empleo de la funcion key_array_exists par saber si en un día determinado existían una actividad.
 
