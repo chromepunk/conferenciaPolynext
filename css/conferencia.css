@@ -1,4 +1,4 @@
-/*Set the table color, border, and spacing...*/
+/*parametros de diseño de la tabla*/
 table.cal{
 	color:#06425C;
 	border-spacing: 0;
@@ -67,5 +67,15 @@ th{
 }
 .contienecal{
 	margin:10%;
+	width:90%;
+}
+/*comportamiento responsive cuando pantalla es menor de 757px */
+@media screen and (max-width:757px){
+	th {
+		font-size:x-small;
+	}
+	
+	
+	
 }
 

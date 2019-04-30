@@ -9,7 +9,7 @@
 		<div class="mislide fade">
 			<div class="numero">1</div>
 			<img class="ima" src="../images/telas.jpg" style="width:100%;">
-			<div class="texto">telas everywhere</div>
+			<div class="texto"></div>
 		</div>
 		<div class="mislide fade">
 			<div class="numero">2</div>
