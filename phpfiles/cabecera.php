@@ -25,7 +25,7 @@
 <ul class="topnav">
   <li><a class="active" href="index.php">Home</a></li>
   <li><a href="conferencias.php">Conferencias</a></li>
-  <li><a href="#contact">Posters</a></li>
+  <li><a href="comunicaciones.php">Comunicaciones</a></li>
 <?php
 	if(isset($_GET["username"])){
 	echo ' <li class="right"><a href="index.php?opcion=1">,desconectar</a></li>';

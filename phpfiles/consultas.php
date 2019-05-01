@@ -35,7 +35,17 @@ function login($con, $username, $passw){
 
 
 }
+//acabar
 function subeComunicacion($con){
 
 }
+//acabar
+function listaComs($con){
+}
+//acabar
+function muestraCom($con, $com_id){
+	$sentencia="select * from comunicacion where com_id='$com_id'";
+	$res=$con->query($sentencia);
+}
+
 ?>
