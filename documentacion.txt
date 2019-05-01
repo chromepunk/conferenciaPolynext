@@ -5,6 +5,8 @@ Realizando una busqueda en github se encontró una libreria, html2pdf (https://gi
 Para poder instalar la libreria se empleo una aplicacion llamada composer. Una vez instalado composer solo hay que teclear en la carpeta raiz del proyecto: 
 composer require spipu/html2pdf y la libreria ya puede ser utilizada (si este proyecto fuera desplegado para produccion habria que modificar la instalacion de composer).
 
+Se imprime una lista de los t’tulos de las comunicaciones y a la vez que se imprime cada una se le asocia un bot—n que por medio de un href y mŽtodo GET se pasa a otra p‡gina d—nde ser‡ impreso.
+
 // acabar pie
 
 
@@ -110,3 +112,4 @@ Para logout <?php session_destroy(); ?>
 ////bibliografia////
 
 w3schools.com
+https://riptutorial.com/php/example/9382/loop-through-mysqli-results 

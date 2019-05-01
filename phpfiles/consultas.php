@@ -37,15 +37,34 @@ function login($con, $username, $passw){
 }
 //acabar
 function subeComunicacion($con){
+	
 
 }
-//acabar
+// muestra una lista de las comunicaciones disponibles.
 function listaComs($con){
-}
-//acabar
-function muestraCom($con, $com_id){
-	$sentencia="select * from comunicacion where com_id='$com_id'";
+	$sentencia="select * from comunicacion";
 	$res=$con->query($sentencia);
+	//ahora recuperamos los datos en forma de array
+	echo 'comunicaciones:<br>';
+	while($fila = $res->fetch_assoc()) {
+    		echo $fila['comunicacion'].'<a href="impreso.php?com='.$fila['com_id'].'"> Imprime </a> <br>';
+		}
+	
+	
+}
+// busca una comunicacion y la muestra para ser impresa
+function muestraCom($con, $com){
+	$sentencia ="SELECT comunicacion.comunicacion, comunicacion.abstract, usuarios.nombre, usuarios.apellido1 from comunicacion, usuarios where comunicacion.part_id = usuarios.usuario_id and com_id='$com'";
+	$res=$con->query($sentencia);
+
+	$texto="";
+	while($fila = $res->fetch_assoc()) {
+		$texto=$texto.'<h1>'.$fila['comunicacion'].'</h1><br><p>
+<strong>Autor:</strong> '.$fila['nombre'].' '.$fila['apellido1'].'</p><br><p><strong>Abstract:</strong><br>'.$fila['abstract'].'</p>';
+
+
+    		return $texto;
+	}
 }
 
 ?>
