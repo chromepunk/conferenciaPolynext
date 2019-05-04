@@ -5,6 +5,8 @@ function insertar($con, $nombre, $apellido1, $org_id, $email, $username, $passw 
 	$sentencia = "insert into usuarios (nombre, apellido1, org_id, email, username, passw) values ('$nombre', '$apellido1', $org_id, '$email', '$username', '$passw')";
 
 	if(mysqli_query($con, $sentencia)){
+		//insertar ahora en la tabla de participantes
+		//$sentencia = "insert into participantes (usuario_id) values (usuario_id2´-ç);
 	}else{
 		echo "<h3>error al insertar</h3>";
 	}

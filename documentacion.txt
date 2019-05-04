@@ -1,3 +1,10 @@
+Crear un usuario organizador. El resto solo participantes
+
+Complejidad de la contraseña
+
+evitar inyeccion de codigo
+
+
 //Diagramas de clases, entidad/relacion, casos de uso...
 
 //Imprimir un pdf desde la propia web
