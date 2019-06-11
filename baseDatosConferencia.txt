@@ -1,4 +1,4 @@
-﻿GRANT ALL ON conferencia.* TO 'joan'@'localhost' IDENTIFIED BY 'joan';
+GRANT ALL ON conferencia.* TO 'joan'@'localhost' IDENTIFIED BY 'joan';
 
 <?php
 $pdo= new PDO('mysql:hostlocalhost;port=8809;dbname=Conferencia','joan','joan');
@@ -37,14 +37,12 @@ create table usuarios (
 	nombre varchar(64),
 	apellido1 varchar(64),
 	org_id int,
+	username varchar(64) not null unique,
+	passw varchar(64) not null,
 	email varchar(64),
 	primary key (usuario_id),
 	foreign key (org_id) references organizacion (org_id)
 );
-
-alter table usuarios
-add username varchar(64) not null unique,
-add passw varchar(64) not null;
 
 
 create table participantes (
