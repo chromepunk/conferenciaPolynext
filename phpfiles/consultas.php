@@ -38,10 +38,17 @@ function login($con, $username, $passw){
 
 }
 //acabar
-function subeComunicacion($con){
+function subeCom($con){
 	
 
 }
+
+//acabar
+function revisaCom(){
+
+}
+
+
 // muestra una lista de las comunicaciones disponibles.
 function listaComs($con){
 	$sentencia="select * from comunicacion";

@@ -69,6 +69,7 @@ create table tematica (
 
 create table comunicacion (
 	com_id integer not null AUTO_INCREMENT,
+	estado varchar(64),
 	comunicacion varchar(64),
 	abstract varchar(1024),
 	tipo varchar(64),
@@ -153,42 +154,47 @@ insert into tematica(tema) values("materiales composites");
 
 insert into tematica(tema) values("educación y formación");
 
-insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("polimeros de Si-Li",
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada","polimeros de Si-Li",
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
 mollit anim id est laborum.","oral", 1,2,1);
-insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("New Horizons in Polymeric Biosinthesis","
-sciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
- Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
-Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum 
-iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada","New Horizons in Polymeric Biosinthesis","
+sciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eumiure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
 ","oral", 3,3,1);
-insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("Nuevas Posibilidades de aplicación de HPLC y afines",
+
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada","Nuevas Posibilidades de aplicación de HPLC y afines",
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
 mollit anim id est laborum.","oral", 3,2,2);
-insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("Deteccion y diagnostico en materiales",
+
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada", "Deteccion y diagnostico en materiales",
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-mollit anim id est laborum.","oral", 3,2,2);insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("Nuevas Posibilidades de aplicación de HPLC y afines",
+mollit anim id est laborum.","oral", 3,2,2);
+
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada", "Nuevas Posibilidades de aplicación de HPLC y afines",
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
 mollit anim id est laborum.","oral", 3,2,3);
-insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("Alternativas al amianto",
+
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada","Alternativas al amianto",
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
-mollit anim id est laborum.","oral", 3,2,3);insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("Estrategias formativas para bachillerato",
+mollit anim id est laborum.","oral", 3,2,3);
+
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada", "Estrategias formativas para bachillerato",
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
 mollit anim id est laborum.","oral", 3,2,4);
-insert into comunicacion (comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("Formación en el laboratorio",
+
+insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, organ_id, tema_id) values ("aceptada", "Formación en el laboratorio",
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
 in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
