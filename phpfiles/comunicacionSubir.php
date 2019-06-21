@@ -1,7 +1,7 @@
 <?php
-	include "cabecera.php";
-	include "consultas.php";
-	
+include "cabecera.php";
+include "consultas.php";
+
 	$host="localhost";
 	$user="joan";
 	$pass="joan";
@@ -18,23 +18,8 @@
 
 	//idioma de la base de datos
 	$con->set_charset("UTF8");
+	
+	subeCom($con, $_POST['comunicacion'], $_POST['abstract'],$_SESSION['part_id'], $_POST['tema_id'], $_POST['tipo']);
 
-	//////////////hasta aqui conexion///////
-	listaComs($con);
-	
-	
-	
-	
-?>
 
-<?php
-//como precaucion hay que asegurarse de que un usuario ha iniciado sesión
-if(isset($_SESSION['username'])){
-	tipoUsuario($con, $_SESSION['username']);
-}
-?>
-
-<?php
-	mysqli_close($con);
-	include "pie.php";
 ?>

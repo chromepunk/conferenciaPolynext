@@ -38,6 +38,21 @@ function login($con, $username, $passw){
 
 }
 
+function tipoUsuario($con, $username){
+	$sentencia="SELECT participantes.part_id, usuarios.apellido1 from usuarios JOIN participantes where 
+	usuarios.usuario_id=participantes.part_id and usuarios.username='$username'";
+	$res=$con->query($sentencia);
+	if($res->num_rows > 0){
+	while($fila = $res->fetch_assoc()) {
+    		$_SESSION['part_id']=$fila['part_id'];
+			tieneCom($con, 	$_SESSION['username']);
+		}
+	}else{
+		echo "<h3>organizador</h3>";
+	}
+	
+}
+
 
 function tieneCom($con, $username){
 	$sentencia="SELECT * FROM comunicacion join participantes join usuarios where comunicacion.part_id = participantes.part_id and participantes.usuario_id = usuarios.usuario_id and usuarios.username = '$username' and comunicacion.estado='aceptada'";
@@ -48,12 +63,35 @@ function tieneCom($con, $username){
 	}
 	else{
 		echo "<h3>Subir comunicacion</h3>";
-		echo "<form method='post'>
-			Abstract:<input type='text' name='abstract' /><br>
-			<textarea name='comunicacion' rows='20' cols='50'>Introduce el cuerpo de la comunicacion...</textarea><br>	
+		echo "<form method='post' action='comunicacionSubir.php'>
+			
+			<p>
+			Tipo:
+			<select name='tipo' required>
+				<option value='oral'>Oral</option>
+				<option value='poster'>Poster</option>
+			</select>
+			</p>
+			
+			<p>
+			Tematica:
+			<select name='tema_id' required>
+				<option value='1'>sintesis polimerica</option>
+				<option value='2'>analisis de polimeros</option>
+				<option value='3'>materiales composites</option>
+				<option value='4'>educacion y formacion</option>
+			</select>
+			</p>
+			
+			<p>
+			Comunicacion:<input type='text' name='comunicacion' required />
+			</p>
+			
+			<p>
+			<textarea name='abstract' rows='20' cols='50' required></textarea>
+			</p>
+			
 			<input type='submit'/>	
-
-
 		</form>";
 	}
 }
@@ -61,7 +99,19 @@ function tieneCom($con, $username){
 
 
 //acabar
-function subeCom($con){
+function subeCom($con, $comunicacion, $abstract,  $part_id, $tematica, $tipo){
+
+	//$sentencia="insert into comunicacion (estado, abstract, comunicacion, part_id, tema_id, tipo, ) values ('pendiente', '$abstract', '$comunicacion', $part_id,$tematica, '$tipo'";
+
+	$sentencia="insert into comunicacion (estado, comunicacion, abstract, tipo, part_id, tema_id) values ('pendiente','$comunicacion',
+'$abstract','$tipo', $part_id, $tematica)";
+
+
+	if(mysqli_query($con, $sentencia)){
+		echo "<h3>comunicacion insertada</h3>";
+	}else{
+		echo "<h3>error al insertar</h3>";
+	}
 	
 
 }
@@ -70,6 +120,8 @@ function subeCom($con){
 function revisaCom(){
 
 }
+
+
 
 
 // muestra una lista de las comunicaciones disponibles.
