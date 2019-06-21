@@ -24,7 +24,10 @@
 	
 ?>
 
+<?php
+tieneCom($con, 	$_SESSION['username']);
 
+?>
 
 <?php
 	include "pie.php";

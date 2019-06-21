@@ -37,6 +37,29 @@ function login($con, $username, $passw){
 
 
 }
+
+
+function tieneCom($con, $username){
+	$sentencia="SELECT * FROM comunicacion join participantes join usuarios where comunicacion.part_id = participantes.part_id and participantes.usuario_id = usuarios.usuario_id and usuarios.username = '$username' and comunicacion.estado='aceptada'";
+	$res=$con->query($sentencia);
+	if($res->num_rows > 0){
+
+		echo "<h3>tu comunicacion ha sido aceptada</h3>";
+	}
+	else{
+		echo "<h3>Subir comunicacion</h3>";
+		echo "<form method='post'>
+			Abstract:<input type='text' name='abstract' /><br>
+			<textarea name='comunicacion' rows='20' cols='50'>Introduce el cuerpo de la comunicacion...</textarea><br>	
+			<input type='submit'/>	
+
+
+		</form>";
+	}
+}
+
+
+
 //acabar
 function subeCom($con){
 	
