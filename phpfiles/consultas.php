@@ -49,6 +49,7 @@ function tipoUsuario($con, $username){
 		}
 	}else{
 		echo "<h3>organizador</h3>";
+		$_SESSION['organizador']=True;
 	}
 	
 }
@@ -97,8 +98,6 @@ function tieneCom($con, $username){
 }
 
 
-
-//acabar
 function subeCom($con, $comunicacion, $abstract,  $part_id, $tematica, $tipo){
 
 	//$sentencia="insert into comunicacion (estado, abstract, comunicacion, part_id, tema_id, tipo, ) values ('pendiente', '$abstract', '$comunicacion', $part_id,$tematica, '$tipo'";
@@ -117,22 +116,52 @@ function subeCom($con, $comunicacion, $abstract,  $part_id, $tematica, $tipo){
 }
 
 //acabar
-function revisaCom(){
+function revisaCom($con, $decision, $com_id){
+	//si $decision es True aceptara si no rechazará
+	if($decision=="True"){
+		$sentencia= "UPDATE comunicacion SET estado = 'aceptada' where com_id = $com_id";
+		if(mysqli_query($con, $sentencia)){
+		echo "<h3>comunicacion Aceptada</h3>";
+	}else{
+		echo "<h3>error al insertar</h3>";
+	}
+		
+		
+	}else{
+		
+		echo "<h3>Comunicacion rechazada</h3>";
+		
+		
+	}
 
 }
 
 
 
 
-// muestra una lista de las comunicaciones disponibles.
+// muestra una lista de las comunicaciones disponibles aceptadas y en el caso de un organizador las pendientes tambien.
 function listaComs($con){
-	$sentencia="select * from comunicacion";
+	//solo comunicaciones aceptadas
+	$sentencia="select * from comunicacion where estado='aceptada'";
 	$res=$con->query($sentencia);
 	//ahora recuperamos los datos en forma de array
-	echo 'comunicaciones:<br>';
+	echo '<h3>comunicaciones Aceptadas:</h3><br>';
 	while($fila = $res->fetch_assoc()) {
     		echo $fila['comunicacion'].'<a href="impreso.php?com='.$fila['com_id'].'"> Imprime </a> <br>';
 		}
+		
+	if($_SESSION['organizador']){
+		echo "<br><h3>Comunicaciones pendientes de revisar</h3>";
+		
+		//solo comunicaciones aceptadas
+		$sentencia="select * from comunicacion where estado='pendiente'";
+		$res=$con->query($sentencia);
+		//ahora recuperamos los datos en forma de array
+		while($fila = $res->fetch_assoc()) {
+    		echo $fila['comunicacion']."<a href='decision.php?com_id=".$fila['com_id']."&decision=True'> Acepta </a> <a href='decision.php?com_id=".$fila['com_id']."&decision=False'> Rechaza </a> <br>";
+		}
+		
+	}
 	
 	
 }
