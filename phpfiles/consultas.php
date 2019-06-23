@@ -115,7 +115,6 @@ function subeCom($con, $comunicacion, $abstract,  $part_id, $tematica, $tipo){
 
 }
 
-//acabar
 function revisaCom($con, $decision, $com_id){
 	//si $decision es True aceptara si no rechazará
 	if($decision=="True"){

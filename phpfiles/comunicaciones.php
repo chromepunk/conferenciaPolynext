@@ -20,7 +20,6 @@
 	$con->set_charset("UTF8");
 
 	//////////////hasta aqui conexion///////
-	listaComs($con);
 	
 	
 	
@@ -32,6 +31,7 @@
 if(isset($_SESSION['username'])){
 	tipoUsuario($con, $_SESSION['username']);
 }
+	listaComs($con);
 ?>
 
 <?php

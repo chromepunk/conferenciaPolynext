@@ -27,9 +27,9 @@
   <li><a href="conferencias.php">Conferencias</a></li>
   <li><a href="comunicaciones.php">Comunicaciones</a></li>
 <?php
-	if(isset($_GET["username"])){
+	if(isset($_SESSION["username"])){
 	echo ' <li class="right"><a href="index.php?opcion=1">,desconectar</a></li>';
-	echo ' <li class="right"><a href="login.php">bienvenido/a, '.$_GET["username"].'</a></li>';
+	echo ' <li class="right"><a href="login.php">bienvenido/a, '.$_SESSION["username"].'</a></li>';
 }else{
 
 	echo ' <li class="right"><a href="login.php">Login</a></li>';
