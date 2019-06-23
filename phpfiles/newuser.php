@@ -22,10 +22,14 @@
 	//////////////hasta aqui conexion///////
 
 	include "consultas.php";
+	if(isset($_POST['username'])){
 	if(buscar($con, $_POST['username'])){	
 		insertar($con,$_POST['nombre'],$_POST['apellido1'],$_POST['org_id'], $_POST['email'],$_POST['username'], $_POST['passwd']);
 		header ('Location: index.php?opcion=2');
-	}
+	}else{
+		echo "<h3>nombre de usuario ya en uso</h3>";
+		unset($_POST['username']);
+	}}
 
 
 ?>

@@ -17,9 +17,9 @@ function buscar($con, $username){
 	$sentencia="select usuario_id from usuarios where username='$username'";
 	$res=$con->query($sentencia);
 	if($res->num_rows > 0){
-		return false;
-		}else{ 
-			return true;
+		return False;
+	}else{ 
+		return True;
 		}
 }
 
